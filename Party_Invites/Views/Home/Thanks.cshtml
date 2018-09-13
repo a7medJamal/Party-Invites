@@ -15,6 +15,28 @@
     }
 </style>
 
+
+@{
+    try
+    {
+        WebMail.SmtpServer = "smtp.gmail.com";
+        WebMail.SmtpPort = 587;
+        WebMail.EnableSsl = true;
+        WebMail.UserName = "";
+        WebMail.Password = "";
+        WebMail.From = "";
+        WebMail.SmtpUseDefaultCredentials = true;
+
+
+        WebMail.Send("Wnter mail", "RSVP Notification", Model.Name
+            + "is" + (((bool)Model.WillAttend) ? "" : "Not") + "attending");
+    }
+    catch (Exception)
+    {
+        @: Sorry to send email
+
+    }
+}
 <body>
 
     <h1 class="text-danger text-center">Thank you , @Model.Name  !</h1>
@@ -30,5 +52,5 @@
         {
             @: Sorry to hear that you can't make it,but thanks for letting us know.
         }
+    </div>
 </body>
-      </div>
