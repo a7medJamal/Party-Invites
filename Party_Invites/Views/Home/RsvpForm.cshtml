@@ -1,8 +1,32 @@
 ﻿@model Party_Invites.Models.GestResponse
 
 @{
-    ViewBag.Title = "RsvpForm";
+    ViewBag.Title = "Register";
 }
+<div class="text-center   ">
+    <br />
 
-<h2>RsvpForm</h2>
+    <h2>Register</h2>
+    <br />
+    <br />
 
+    @using (Html.BeginForm("", "", new { @class = "" }))
+    {
+        <p class=""> Your Name : @Html.TextBoxFor(x => x.Name,"", new { @class = "textarea " })</p>
+        <p>Your Mail  : @Html.TextBoxFor(x => x.Email)</p>
+        <p>Your Phone : @Html.TextBoxFor(x => x.Phone)</p>
+        <p>
+            Will you attend ? :
+            @Html.DropDownListFor(x => x.WillAttend, new[]
+        {
+            new SelectListItem(){Text="Yes I'll be there",Value=bool.TrueString},
+            new SelectListItem(){ Text="No, I cant come",Value=bool.FalseString }
+            },"Please Select Optional", new { @class = "dropdown-list " })
+
+        </p>
+        <br />
+        <br />
+        <input type="submit" value="Sent Data "  class="btn btn-default" />
+    }
+
+</div>
