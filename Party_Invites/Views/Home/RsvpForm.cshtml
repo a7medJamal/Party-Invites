@@ -3,31 +3,54 @@
 @{
     ViewBag.Title = "Register";
 }
-<div class="text-center   ">
-    <br />
 
-    <h2>Register</h2>
-    <br />
-    <br />
+<br />
+<div class="panel panel-success">
 
-    @using (Html.BeginForm("RsvpForm", "Home", new { @class = "" }))
-    {
-        @Html.ValidationSummary()
-        <p class=""> Your name : @Html.TextBoxFor(x => x.Name,"", new { @class = "textarea " })</p>
-        <p>Your Mail  : @Html.TextBoxFor(x => x.Email)</p>
-        <p>Your Phone : @Html.TextBoxFor(x => x.Phone)</p>
-        <p>
-            Will you attend ? :
-            @Html.DropDownListFor(x => x.WillAttend, new[]
+    <div class="  panel-heading text-center  ">
+        <h2>Register</h2>
+    </div>
+
+    <br />  <br />
+
+    <div class="panel panel-body ">
+        @using (Html.BeginForm("RsvpForm", "Home"))
         {
-            new SelectListItem(){Text="Yes I'll be there",Value=bool.TrueString},
+            @Html.ValidationSummary()
+
+            <div class="form-group">
+                <label>Your name :</label>
+                @Html.TextBoxFor(x => x.Name, "", new { @class = "form-control " })
+            </div>
+
+            <div class="form-group">
+                <label>Your Mail  :</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control " })
+            </div>
+
+            <div class="form-group">
+                <label>Your Phone  :</label>
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control " })
+            </div>
+
+
+            <div class="form-group">
+                <label>Will you attend ?   </label>
+                @Html.DropDownListFor(x => x.WillAttend, new[]
+            {
+                new SelectListItem(){Text="Yes I'll be there",Value=bool.TrueString},
             new SelectListItem(){ Text="No, I cant come",Value=bool.FalseString }
-            },"Please Select Optional", new { @class = "dropdown-list " })
+            },"Please Select Optional", new { @class = "form-control " })
 
-        </p>
-        <br />
-        <br />
-        <input type="submit" value="Sent Data "  class="btn btn-default" />
-    }
 
+
+            </div>
+
+
+
+            <br /> <br />
+
+            <input type="submit" value="Sent Data " class="btn btn-success" />
+        }
+    </div>
 </div>

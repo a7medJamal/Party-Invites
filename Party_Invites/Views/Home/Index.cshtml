@@ -2,24 +2,43 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="text-center">
 
-    <br />
-    <br />
-    <br />
-    <h2 class="text-warning">@ViewBag.Greeting </h2>
-    <br />
-    <br />
-    <p class="btn-lg"> We're going to have an exciting party</p>
 
-    <br />
-    <br />
-    <p class="alert-dismissable"> (To do : sell it better. add pictures or something)</p>
-    <br />
-    <br />
-    <br />
-    <br />
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none
+    }
+    .hour{color:rebeccapurple; font-size:medium}
+    body {
+        background-color: #F1F1F1;
+        color:black;
+        font-size:initial
+    }
 
-    <h1 class="bottom   bottom-left">@Html.ActionLink("ِRegister Now", "RsvpForm")</h1>
+</style>
 
+<div class="text-center hour" >
+    <br />  <br />  <br />
+
+    <h2>@ViewBag.Greeting </h2>
 </div>
+<br />
+<br />
+<body>
+    <p> We're going to have an exciting party</p>
+
+    <br />
+    <br />
+    <p> (To do : sell it better. add pictures or something)</p>
+
+</body>
+<br />
+<br />
+<br />
+<br />
+<div class="btn btn-success">
+    @Html.ActionLink("ِRegister Now", "RsvpForm")
+</div>
+
+
