@@ -12,6 +12,7 @@
 
     @using (Html.BeginForm("RsvpForm", "Home", new { @class = "" }))
     {
+        @Html.ValidationSummary()
         <p class=""> Your name : @Html.TextBoxFor(x => x.Name,"", new { @class = "textarea " })</p>
         <p>Your Mail  : @Html.TextBoxFor(x => x.Email)</p>
         <p>Your Phone : @Html.TextBoxFor(x => x.Phone)</p>

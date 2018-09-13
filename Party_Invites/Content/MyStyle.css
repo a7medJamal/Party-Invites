@@ -1,0 +1,14 @@
+﻿.validation-summary-errors
+{
+    font-weight:bold;
+    color:red;
+    text-align:center;      
+}
+
+.validation-summary-valid{display:none}
+
+.filed-validation-error{color:red}
+
+.filed-validation-valid {display:none}
+
+.input-validation-error{border:1px dashed #ff0000; background-color:#fee}
